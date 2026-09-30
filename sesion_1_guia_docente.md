@@ -203,6 +203,16 @@ Explicar:
 
 # 8. Diapositiva 5 — Cliente y servidor
 
+### Definicion:
+
+El modelo cliente-servidor es un modelo de comunicación digital donde los roles de trabajo se dividen en dos partes:
+
+El Cliente: Es la aplicación o dispositivo (como tu teléfono o computadora) que inicia la comunicación solicitando un servicio o información específica.
+
+El Servidor: Es el sistema centralizado que recibe esa solicitud, la procesa y devuelve la respuesta correspondiente.
+
+En términos prácticos, cuando abres una aplicación para consultar el clima o un navegador para buscar una página web, tu dispositivo actúa como el cliente que pide los datos, mientras que el sistema central o servidor remoto se encarga de procesarlos y enviártelos de vuelta para que puedas visualizarlos.
+
 Explicar que el cliente normalmente inicia la comunicación.
 
 ```text
@@ -257,6 +267,8 @@ durante el desarrollo local.
 ---
 
 # 10. Diapositiva 7 — Conceptos básicos de red
+
+Es una dirección web privada y local que le indica a tu computadora que abra el programa que está ejecutándose en el puerto 3000, y que específicamente le pida la sección o los datos correspondientes a los usuarios.
 
 Explicar únicamente lo necesario.
 
@@ -546,6 +558,17 @@ Después los más importantes:
 
 # 19. Diapositiva 16 — API
 
+### Definicioon:
+una API (Application Programming Interface o Interfaz de Programación de Aplicaciones) es un conjunto de definiciones, protocolos y reglas estructuradas que permite que diferentes componentes de software se comuniquen e intercambien datos entre sí.
+
+Funciona como un contrato formal entre sistemas, especificando:
+
+Los endpoints (rutas): Las URLs o URIs a las que se realizan las peticiones.
+
+Los métodos HTTP permitidos: Las acciones que se pueden ejecutar (como GET para consultar, POST para crear, PUT para actualizar o DELETE para eliminar).
+
+La estructura de los datos: El formato exacto en el que se deben enviar las solicitudes y recibir las respuestas (comúnmente utilizando objetos JSON o XML) y las cabeceras requeridas (como el Content-Type).
+
 Explicar API con una analogía sencilla:
 
 > Una API funciona como una interfaz que define cómo otros sistemas pueden comunicarse con nuestro sistema.
@@ -563,6 +586,9 @@ Backend
 ```
 
 No decir que API significa simplemente "Backend".
+
+
+Una API es un traductor y mensajero que permite que un programa le pida información o un servicio a otro y reciba una respuesta de forma rápida y segura.
 
 ---
 
@@ -610,6 +636,13 @@ forman parte de la identificación de una operación de API.
 
 # 22. Diapositiva 19 — REST
 
+### definicion:
+REST (por sus siglas en inglés, Representational State Transfer, o Transferencia de Estado Representacional) es un estilo de arquitectura de software diseñado para crear servicios web eficientes, escalables y fáciles de comunicar a través de internet.
+
+No es un lenguaje de programación ni un protocolo estricto, sino un conjunto de reglas y buenas prácticas sobre cómo debe estructurarse la comunicación entre el cliente y el servidor utilizando los estándares ya existentes de la web (como HTTP).
+
+La relación es muy sencilla: Una API es el concepto general y REST es una forma específica de construirla.
+
 Explicar que REST es un estilo arquitectónico.
 
 No entrar todavía en:
@@ -641,6 +674,12 @@ DELETE /users/10
 ---
 
 # 23. Diapositiva 20 — JSON
+
+### definicion:
+JSON (JavaScript Object Notation) es un formato de texto ligero y estandarizado para organizar y compartir datos entre diferentes sistemas.
+
+Se basa en pares de "clave-valor" (similar a un diccionario) y es el formato estándar que utilizan las APIs modernas por ser fácil de leer tanto para humanos como para computadoras.
+
 
 Presentar JSON como formato de intercambio.
 
@@ -732,7 +771,24 @@ Explicar:
 
 # 26. Diapositiva 23 — ¿Qué es Node.js?
 
+definicion: 
+
+> Node.js es un entorno de ejecución de JavaScript que permite ejecutar código JavaScript fuera del navegador, principalmente en el servidor, para desarrollar aplicaciones backend, APIs y servicios web.
+
+En pocas palabras:
+
+Node.js permite usar JavaScript para desarrollar el lado del servidor.
+
 Definición principal:
+
+> JavaScript es un lenguaje de programación utilizado para crear aplicaciones interactivas y dinámicas, principalmente en páginas web, aunque también puede utilizarse en servidores, aplicaciones móviles y otros entornos.
+
+En pocas palabras:
+
+JavaScript es el lenguaje de programación que permite crear la lógica y el comportamiento de una aplicación.
+
+JavaScript nació como un lenguaje para dar interactividad a las páginas web y evolucionó hasta convertirse en un lenguaje utilizado en todo el desarrollo de aplicaciones, incluyendo frontend y backend.
+
 
 > Node.js es un entorno de ejecución que permite ejecutar JavaScript fuera del navegador.
 
@@ -756,6 +812,11 @@ Explicar la diferencia:
 ### V8
 
 Motor que ejecuta JavaScript.
+
+### definicion
+V8 es un motor de JavaScript desarrollado por Google que se encarga de ejecutar código JavaScript.
+
+> V8 es el motor que interpreta y ejecuta JavaScript.
 
 ### Node.js
 
@@ -799,9 +860,29 @@ La palabra clave es:
 
 No es necesario enseñar todavía el funcionamiento interno del Event Loop.
 
+### ejemplo en el navegador
+De forma sencilla:
+
+El Event Loop coordina la ejecución del código y las operaciones que tardan tiempo, permitiendo que Node.js atienda varias tareas sin esperar a que cada una termine.
+
+Ejemplo
+```text
+console.log("Inicio");
+
+setTimeout(() => {
+  console.log("Tarea terminada");
+}, 2000);
+
+console.log("Fin");
+```
 ---
 
 # 29. Diapositiva 26 — Operaciones asíncronas
+
+### definicion
+ Las operaciones asíncronas son tareas que se ejecutan sin bloquear el flujo principal del programa.
+
+En lugar de detener todo y esperar a que una acción termine para poder continuar (lo cual congelaría la aplicación), el programa lanza la tarea, sigue ejecutando otras cosas y recibe una notificación o resultado cuando esa tarea finalmente termina.
 
 Ejemplos:
 
@@ -820,6 +901,9 @@ Node.js proporciona mecanismos para trabajar con ellas de manera asíncrona.
 
 # 30. Diapositiva 27 — Promises y async/await
 
+### defnicion
+Promises (Promesas) y async/await son las herramientas modernas que usamos en programación (especialmente en JavaScript) para manejar las operaciones asíncronas de forma ordenada.
+
 Explicar brevemente:
 
 ```javascript
@@ -832,9 +916,26 @@ Significa conceptualmente:
 
 No convertir esta sección en una clase de JavaScript avanzado.
 
+
+La analogía del café
+- Operación Síncrona (Bloqueante): Vas por un café, pides tu orden y te quedas parado en la caja sin moverte ni dejar atender a nadie más hasta que te lo entregan. Nadie más puede avanzar.
+
+ - Operación Asíncrona (No bloqueante): Pides tu café, te dan un número y te sientas a revisar tu teléfono. La cafetería sigue atendiendo a otras personas, y cuando tu café está listo, te llaman para recogerlo.
+
 ---
 
 # 31. Diapositiva 28 — npm
+
+### definicion
+npm (que significa Node Package Manager, o Administrador de Paquetes de Node) es, en pocas palabras, como la tienda de aplicaciones (App Store) pero para los programadores de JavaScript.
+
+Imagina que estás construyendo una casa y necesitas instalar tuberías, cerraduras y ventanas. En lugar de fabricar cada cosa desde cero con tus propias manos, vas a una ferretería gigante y compras piezas ya hechas por otros expertos.
+
+Eso es npm:
+
+Una biblioteca gigante: Tiene millones de pequeños programas y herramientas gratuitas (llamados "paquetes") creados por la comunidad.
+
+Un instalador automático: Con un simple comando en tu computadora, te permite descargar, instalar y actualizar esas herramientas en tus proyectos de programación al instante.
 
 Presentar npm.
 

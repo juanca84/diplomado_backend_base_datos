@@ -4,8 +4,6 @@
 
 ## Express.js, Routing, Middleware y REST
 
-**Duración:** 2 horas 15 minutos
-
 ---
 
 # 1. Objetivo
