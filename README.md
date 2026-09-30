@@ -30,6 +30,12 @@ La práctica de cada sesión será breve. El objetivo principal será que el est
 El proyecto se construirá progresivamente durante el módulo.
 
 ---
+## 1.1 Propósito del módulo
+Desarrollar en el estudiante las competencias necesarias para diseñar y construir aplicaciones backend, comprendiendo los fundamentos de Node.js, el desarrollo de APIs REST y la organización de aplicaciones mediante arquitecturas estructuradas con Express.js y NestJS.
+
+El estudiante aprenderá a gestionar la comunicación entre aplicaciones y servicios, implementar rutas, middleware, validaciones, manejo de errores y principios básicos de arquitectura backend. Asimismo, trabajará con PostgreSQL y MongoDB para modelar, almacenar y consultar información, comprendiendo las características y diferencias entre bases de datos relacionales y NoSQL.
+
+El módulo integra estos conocimientos mediante el desarrollo progresivo de servicios backend, aplicando buenas prácticas de organización del código, separación de responsabilidades, persistencia de datos, pruebas de APIs y herramientas de desarrollo como Postman y Docker.
 
 # 2. Proyecto transversal
 
