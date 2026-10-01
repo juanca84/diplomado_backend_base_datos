@@ -216,12 +216,12 @@ server.js
 Escribir:
 
 ```javascript
-const express = require("express");
+import express from "express";
 
 const app = express();
 
 app.listen(3000, () => {
-    console.log("Servidor ejecutándose en http://localhost:3000");
+  console.log("Servidor ejecutándose");
 });
 ```
 
@@ -240,7 +240,7 @@ Servidor ejecutándose en http://localhost:3000
 ### Explicar
 
 ```javascript
-const express = require("express");
+import express from "express";
 ```
 
 Importa Express.
@@ -316,6 +316,13 @@ No es necesario enseñar todos los headers todavía.
 ---
 
 # 9. Diapositiva 6 — Routing
+### Definicion:
+El routing es el mecanismo que permite definir qué debe hacer el servidor cuando recibe una petición a una determinada URL y con un determinado método HTTP.
+
+En otras palabras:
+
+> Routing = definir las rutas que puede atender nuestro servidor.
+
 
 ## Tiempo: 7 minutos
 
@@ -400,6 +407,9 @@ No profundizar todavía en `PATCH`.
 Explicar la diferencia.
 
 ### Recurso
+#### Definicion 
+
+Un recurso representa una entidad o dato de nuestra aplicación.
 
 Representa una entidad del sistema.
 
@@ -412,6 +422,8 @@ orders
 ```
 
 ### Endpoint
+#### Definicion
+Un endpoint es una dirección específica que permite interactuar con un recurso mediante un método HTTP.
 
 Es una combinación de método HTTP y ruta.
 
@@ -461,6 +473,8 @@ Esto prepara la introducción de `req.params`.
 ---
 
 # 13. Diapositiva 10 — Parámetros de ruta
+
+Los parámetros de ruta permiten enviar un valor directamente dentro de la URL.
 
 ## Tiempo: 7 minutos
 
@@ -521,6 +535,14 @@ Number(req.params.id)
 ---
 
 # 14. Diapositiva 11 — Query Parameters
+
+Los Query Parameters son valores que se envían en la URL después de ?. Se utilizan principalmente para filtrar, buscar, ordenar o personalizar una consulta.
+
+Por ejemplo:
+
+```bash
+/users?name=Juan
+```
 
 ## Tiempo: 7 minutos
 
@@ -584,6 +606,10 @@ Ejemplo:
 
 # 15. Diapositiva 12 — Request Body
 
+El Request Body es la información que el cliente envía dentro de la petición HTTP al servidor.
+
+Se utiliza principalmente cuando queremos crear o modificar información.
+
 ## Tiempo: 5 minutos
 
 Explicar que GET normalmente utiliza URL, parámetros y query parameters para consultar información.
@@ -608,6 +634,14 @@ Body:
 ---
 
 # 16. Diapositiva 13 — JSON y Content-Type
+
+### JSON
+
+JSON (JavaScript Object Notation) es un formato utilizado para representar e intercambiar datos entre el cliente y el servidor.
+
+### Content-Type
+
+Content-Type es una cabecera HTTP que indica qué tipo de información estamos enviando.
 
 ## Tiempo: 5 minutos
 
@@ -1016,6 +1050,11 @@ DELETE /users/10
 ---
 
 # 27. Diapositiva 24 — Stateless
+
+### definicion
+Stateless significa "sin estado".
+
+En una API Stateless, cada petición debe contener toda la información necesaria para que el servidor pueda procesarla. El servidor no depende de información guardada de una petición anterior.
 
 ## Tiempo: 3 minutos
 
