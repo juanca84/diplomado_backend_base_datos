@@ -1680,7 +1680,7 @@ Esto crea una conexión natural con la siguiente sesión.
 Al finalizar la demostración, el archivo `server.js` debería tener una estructura similar a esta:
 
 ```javascript
-const express = require("express");
+import express from "express";
 
 const app = express();
 
