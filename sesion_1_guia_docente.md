@@ -1400,6 +1400,28 @@ console.log(req.url);
 
 Esto permite ver qué está enviando el navegador.
 
+La practica resuelta 
+```javascript
+const http = require("http");
+
+const PORT = 3000;
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {
+    "Content-Type": "text/plain; charset=utf-8"
+  });
+
+  if (req.url === "/") {
+    res.end("Servidor funcionando");
+  } else {
+    res.end("Ruta no encontrada");
+  }
+});
+
+server.listen(PORT, () => {
+  console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
+});
+```
 ---
 
 # 45. DEMOSTRACIÓN IMPORTANTE: Request en vivo
@@ -1492,51 +1514,87 @@ Antes de terminar, hacer preguntas rápidas:
 
 ### Pregunta 1
 
-¿Qué es el Backend?
+**¿Qué es el Backend?**
+
+Es la parte de una aplicación que funciona en el servidor y se encarga de procesar datos, aplicar reglas y comunicarse con la base de datos.
 
 ### Pregunta 2
 
-¿Qué diferencia existe entre cliente y servidor?
+**¿Qué diferencia existe entre cliente y servidor?**
+
+El **cliente** solicita información o servicios. El **servidor** recibe la solicitud, la procesa y devuelve una respuesta.
 
 ### Pregunta 3
 
-¿Qué es una Request?
+**¿Qué es una Request?**
+
+Es una **solicitud** que el cliente envía al servidor.
 
 ### Pregunta 4
 
-¿Qué es una Response?
+**¿Qué es una Response?**
+
+Es la **respuesta** que el servidor devuelve al cliente después de procesar una solicitud.
 
 ### Pregunta 5
 
-¿Qué significa `GET`?
+**¿Qué significa `GET`?**
+
+Es un método HTTP utilizado principalmente para **solicitar o consultar información**.
 
 ### Pregunta 6
 
-¿Qué significa `404`?
+**¿Qué significa `404`?**
+
+Significa **Not Found**. Indica que el recurso o ruta solicitada no fue encontrada.
 
 ### Pregunta 7
 
-¿Qué es un endpoint?
+**¿Qué es un endpoint?**
 
+Es una **ruta específica de un servidor o API** que permite acceder a un recurso o realizar una operación.
+
+Ejemplo:
+
+```text
+/users
+```
 ### Pregunta 8
 
-¿Qué es JSON?
+**¿Qué es JSON?**
+
+Es un formato de texto utilizado para **intercambiar datos** entre aplicaciones.
+
+```json
+{
+  "name": "Juan",
+  "age": 30
+}
+```
 
 ### Pregunta 9
 
-¿Qué es Node.js?
+**¿Qué es Node.js?**
+
+Es un entorno que permite **ejecutar JavaScript fuera del navegador**, por ejemplo, para crear servidores Backend.
 
 ### Pregunta 10
 
-¿Qué significa `localhost:3000`?
+**¿Qué significa `localhost:3000`?**
+
+`localhost` significa **nuestra propia computadora** y `3000` es el **puerto** donde está funcionando el servidor.
 
 ### Pregunta 11
 
-¿Qué representa `req`?
+**¿Qué representa `req`?**
+
+Representa la **Request**, es decir, la solicitud que recibe el servidor.
 
 ### Pregunta 12
 
-¿Qué representa `res`?
+**¿Qué representa `res`?**
+
+Representa la **Response**, es decir, la respuesta que el servidor enviará al cliente.
 
 ---
 
