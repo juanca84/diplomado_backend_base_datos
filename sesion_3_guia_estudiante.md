@@ -4,7 +4,6 @@
 
 **Módulo:** Arquitectura del Back-End y Bases de Datos
 **Proyecto:** TaskFlow
-**Duración de la sesión:** 2 horas 15 minutos
 
 ---
 
@@ -94,16 +93,17 @@ taskflow-database
 Dentro tendremos:
 
 ```text
-taskflow-database/
+session-3/
 │
-├── docker-compose.yml
 │
 ├── postgres/
 │   ├── 01_schema.sql
-│   └── 02_seed.sql
+│   ├── 02_seed.sql
+│   └── docker-compose.yml 
 │
 └── mongodb/
-    └── seed.js
+    ├── seed.js
+    └── docker-compose.yml
 ```
 
 ---
@@ -112,7 +112,7 @@ taskflow-database/
 
 Docker Compose nos permite levantar varios servicios utilizando un solo archivo.
 
-Crear:
+Crear dentro del directorio postgres:
 
 ```text
 docker-compose.yml
@@ -122,33 +122,48 @@ Con el siguiente contenido:
 
 ```yaml
 services:
-
   postgres:
     image: postgres:17
-    container_name: taskflow-postgres
+    container_name: backend-postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER: taskflow
-      POSTGRES_PASSWORD: taskflow
-      POSTGRES_DB: taskflow
+      POSTGRES_DB: backend_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+volumes:
+  postgres_data:
+```
+
+Crear dentro del directorio mongodb:
+
+```text
+docker-compose.yml
+```
+
+Con el siguiente contenido:
+
+```yaml
+services:
   mongodb:
     image: mongo:8
-    container_name: taskflow-mongodb
+    container_name: backend-mongodb
     restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: backend_db
     ports:
       - "27017:27017"
     volumes:
       - mongodb_data:/data/db
 
 volumes:
-  postgres_data:
   mongodb_data:
 ```
+
 
 ---
 
@@ -157,7 +172,7 @@ volumes:
 Desde la carpeta:
 
 ```bash
-cd taskflow-database
+cd postgres
 ```
 
 ejecutar:
@@ -174,11 +189,10 @@ Comprobar:
 docker compose ps
 ```
 
-Debemos tener dos servicios funcionando:
+Debemos tener el servicio funcionando:
 
 ```text
-taskflow-postgres
-taskflow-mongodb
+backend-postgres
 ```
 
 ---
@@ -188,13 +202,13 @@ taskflow-mongodb
 Podemos entrar directamente al contenedor:
 
 ```bash
-docker exec -it taskflow-postgres psql -U taskflow -d taskflow
+docker exec -it backend-postgres psql -U postgres -d backend_db
 ```
 
 Si funciona veremos algo similar a:
 
 ```text
-taskflow=#
+backend_db=#
 ```
 
 Para salir:
@@ -210,7 +224,7 @@ Para salir:
 Podemos entrar al contenedor:
 
 ```bash
-docker exec -it taskflow-mongodb mongosh
+docker exec -it backend-mongodb mongosh
 ```
 
 Después:
@@ -886,13 +900,13 @@ Utilizar el script proporcionado por el docente.
 Después ejecutar:
 
 ```bash
-docker exec -i taskflow-mongodb mongosh < mongodb/seed.js
+docker exec -i backend-mongodb mongosh < mongodb/seed.js
 ```
 
 Si utilizamos PowerShell y el comando anterior presenta problemas, podemos abrir `mongosh`:
 
 ```bash
-docker exec -it taskflow-mongodb mongosh
+docker exec -it backend-mongodb mongosh
 ```
 
 y ejecutar el contenido del script dentro de la consola.
