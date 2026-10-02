@@ -138,6 +138,35 @@ modulo2-sesion2/
 └── package.json
 ```
 
+### Configurar ES Modules
+
+Por defecto, Node.js utiliza CommonJS. Para trabajar con la sintaxis moderna de ES Modules, agregamos:
+
+```bash
+"type": "module"
+```
+
+Podemos hacerlo automáticamente desde la terminal:
+
+```bash
+npm pkg set type=module
+```
+
+El archivo package.json quedará similar a:
+
+```bash
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+```
 ---
 
 # 6. Instalar Express
@@ -188,7 +217,7 @@ modulo2-sesion2/
 Escribir:
 
 ```javascript
-const express = require("express");
+import express from 'express';
 
 const app = express();
 
@@ -232,7 +261,7 @@ Ctrl + C
 Modificar `server.js`:
 
 ```javascript
-const express = require("express");
+import express from 'express';
 
 const app = express();
 
@@ -495,7 +524,7 @@ app.use(express.json());
 Nuestro código empieza a quedar:
 
 ```javascript
-const express = require("express");
+import express from 'express';
 
 const app = express();
 
