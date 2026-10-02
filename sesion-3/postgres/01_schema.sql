@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS taskflow;
+DROP DATABASE IF EXISTS backend_db;
 
-CREATE DATABASE taskflow;
+CREATE DATABASE backend_db;
 
 DROP TABLE IF EXISTS project_members;
 DROP TABLE IF EXISTS tasks;

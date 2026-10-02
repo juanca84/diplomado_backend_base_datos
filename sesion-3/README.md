@@ -100,13 +100,13 @@ Los datos configurados para PostgreSQL son:
 | Host          | `localhost`  |
 | Port          | `5432`       |
 | Database      | `backend_db` |
-| Username      | `root`       |
-| Password      | `root`       |
+| Username      | `postgres`       |
+| Password      | `postgres`       |
 
 ### Connection String
 
 ```text
-postgresql://root:root@localhost:5432/backend_db
+postgresql://postgres:postgres@localhost:5432/backend_db
 ```
 
 Estos datos también pueden utilizarse para conectarse desde herramientas como **DBeaver**.
