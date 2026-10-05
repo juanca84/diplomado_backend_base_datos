@@ -1,4 +1,4 @@
-use taskflow
+use backend_db
 
 db.users.drop()
 db.projects.drop()
